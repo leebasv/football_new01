@@ -1,0 +1,41 @@
+<div class="matchs-info">
+   <div class="col-md-6 col-sm-6 col-xs-12">
+      <div class="row">
+         <div class="full">
+            <div class="matchs-vs">
+               <div class="vs-team">
+                  <div class="team-btw-match">
+                     <ul>
+                        <li>
+                           <img src="../assets/img-03.png" alt="">
+                           <span><%= t "shared.home.match_info.team_1" %></span>
+                        </li>
+                        <li class="vs"><span>vs</span></li>
+                        <li>
+                           <img src="../assets/img-04.png" alt="">
+                           <span><%= t "shared.home.match_info.team_2" %></span>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-md-6 col-sm-6 col-xs-12">
+      <div class="row">
+         <div class="full">
+            <div class="right-match-time">
+               <h2><%= t "shared.home.match_info.next_match" %></h2>
+               <ul id="countdown-1" class="countdown">
+                  <li><span class="days"></span><%= t "shared.home.match_info.days", count: 1 %></li>
+                  <li><span class="hours"></span><%= t "shared.home.match_info.hours", count: 1 %></li>
+                  <li><span class="minutes"></span><%= t "shared.home.match_info.minutes", count: 1 %></li>
+                  <li><span class="seconds"></span><%= t "shared.home.match_info.seconds", count: 1 %></li>
+               </ul>
+               <span><%= t "shared.home.match_info.time" %></span>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
