@@ -1,3 +1,44 @@
 en:
-  layout:
+  layouts:
     title: "Football News"
+  shared:
+    home:
+      footer:
+        menu: "Menu"
+        contact: "Contact us"
+        about: "About us"
+        team: "Our team"
+        news: "News"
+        match: "Match"
+        location: "Da Nang, Vietnam"
+        phone: "0935152225"
+        mail: "lanlehoang67@gmail.com"
+        copyright: "Copyright © 2018 Distributed by Le Hoang Lan && Le Ba Viet"
+      match_info:
+        team_1: "Team 1"
+        team_2: "Team 2"
+        days:
+          one: "Day"
+          other: "Days"
+        hours:
+          one: "Hour"
+          other: "Other"
+        minutes:
+          one: "Minute"
+          other: "Minutes"
+        seconds:
+          one: "Second"
+          other: "Seconds"
+      top:
+        login: "Login"
+        register: "Register"
+        toggle: "Toggle navigation"
+        menu: "Menu"
+        home: "Home"
+        about: "About"
+        team: "Team"
+        news: "News"
+        rankings: "Rankings"
+        match: "Match"
+
+
