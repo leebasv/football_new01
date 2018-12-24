@@ -20,17 +20,36 @@
                         <li><a class="pinterest" href="#"><i class="fab fa-pinterest-p"></i></a></li>
                      </ul>
                      <!-- end social icon -->
-                     <!-- button section -->
+                     <% if logged_in? %>
+                     <li><%= link_to t("layouts.header.users"), "#" %></li>
+                     <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <%= t("layouts.header.account") %><b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                           <li><%= link_to t("layouts.header.profile"), current_user %></li>
+                           <li><%= link_to t("layouts.header.settings"), "#" %></li>
+                           <li class="divider"></li>
+                           <li>
+                              <%= link_to t("layouts.header.log_out"), logout_path,
+                                method: :delete %>
+                           </li>
+                        </ul>
+                     </li>
+                     <% else %>
                      <ul class="login">
                         <li class="login-modal">
-                           <a href="#" class="login"><i class="fa fa-user"></i><%= t "shared.home.top.login" %></a>
+                           <a href="<%= login_path %>" class="login"><i class="fa fa-user"></i><%= t "shared.home.top.login" %></a>
                         </li>
                         <li>
                            <div class="cart-option">
-                              <a href="#"><i class="fa fa-shopping-cart"></i><%= t "shared.home.top.register" %></a>
+                              <a href="<%= signup_path %>"><i class="fa fa-shopping-cart"></i>
+                              <%= t "shared.home.top.register" %></a>
                            </div>
                         </li>
                      </ul>
+                     <% end %>
+                     <!-- button section -->
                      <!-- end button section -->
                   </div>
                </div>
@@ -58,7 +77,7 @@
                                     <li><a href="about.html"><%= t "shared.home.top.about" %></a></li>
                                     <li><a href="team.html"><%= t "shared.home.top.team" %></a></li>
                                     <li><a href="news.html"><%=
-                                    t "shared.home.top.news" %></a></li>
+                                       t "shared.home.top.news" %></a></li>
                                     <li><a href="#"><%= t "shared.home.top.rankings" %></a></li>
                                     <li><a href="#"><%= t "shared.home.top.match" %></a></li>
                                  </ul>
@@ -68,7 +87,7 @@
                            <div class="search-bar">
                               <div id="imaginary_container">
                                  <div class="input-group stylish-input-group">
-                                    <input type="text" class="form-control"  placeholder="Search" >
+                                    <input type="text" class="form-control" placeholder="Search" >
                                     <span class="input-group-addon">
                                     <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                                     </span>
