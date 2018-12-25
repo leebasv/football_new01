@@ -1,6 +1,29 @@
 en:
+  helpers:
+    label:
+      user:
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Confirmation"
   layouts:
     title: "Football News"
+    header:
+      home: "Home"
+      help: "Help"
+      log_in: "Log in"
+      sample_app: "Sample app"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+      log_out: "Log out"
+      users: "Users"
+      account: "Account"
+  sessions:
+    new:
+      title: "Log in"
+      sign_up_html: "New user? %{href}"
+      sign_up_now: "Sign up now!"
   shared:
     home:
       footer:
@@ -29,6 +52,8 @@ en:
         seconds:
           one: "Second"
           other: "Seconds"
+        next_match: "Next match"
+        time: "Time"
       top:
         login: "Login"
         register: "Register"
