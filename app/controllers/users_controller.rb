@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def load_user
     @user = User.find_by id: params[:id]
     return if @user
-    flash[:warning] = t "users.private.not_found"
+    flash[:warning] = t "users.users_controller.not_found"
     redirect_to root_path
   end
 end
