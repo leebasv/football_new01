@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_21_151719) do
+ActiveRecord::Schema.define(version: 2018_12_25_061113) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2018_12_21_151719) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "round_id"
     t.index ["team_id1", "team_id2"], name: "index_matches_on_team_id1_and_team_id2", unique: true
     t.index ["team_id1"], name: "index_matches_on_team_id1"
     t.index ["team_id2"], name: "index_matches_on_team_id2"
@@ -96,11 +97,9 @@ ActiveRecord::Schema.define(version: 2018_12_21_151719) do
   create_table "rounds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.bigint "league_id"
-    t.bigint "match_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["league_id"], name: "index_rounds_on_league_id"
-    t.index ["match_id"], name: "index_rounds_on_match_id"
   end
 
   create_table "score_bets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -165,7 +164,6 @@ ActiveRecord::Schema.define(version: 2018_12_21_151719) do
   add_foreign_key "rankings", "leagues"
   add_foreign_key "rankings", "teams"
   add_foreign_key "rounds", "leagues"
-  add_foreign_key "rounds", "matches"
   add_foreign_key "score_bets", "matches"
   add_foreign_key "score_bets", "teams"
   add_foreign_key "score_bets", "users"

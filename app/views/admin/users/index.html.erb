@@ -1,0 +1,62 @@
+<div class="table-container">
+   <table class="trestle-table">
+      <thead>
+         <tr>
+            <th class="">
+               <a class="sort" href="http://localhost:3000/admin/users?order=asc&amp;sort=id">
+               <%= t "users.index.id" %>
+               </a>
+            </th>
+            <th class="">
+               <a class="sort" href="http://localhost:3000/admin/users?order=asc&amp;sort=name">
+               <%= t "users.index.name" %>
+               </a>
+            </th>
+            <th class="">
+               <a class="sort" href="http://localhost:3000/admin/users?order=asc&amp;sort=email">
+               <%= t "users.index.email" %>
+               </a>
+            </th>
+            </th>
+            <th class="text-center">
+               <a class="sort" href="http://localhost:3000/admin/users?order=asc&amp;sort=activated">
+               <%= t "users.index.activated" %>
+               </a>
+            </th>
+            <th class="text-center">
+               <a class="sort" href="http://localhost:3000/admin/users?order=asc&amp;sort=activated_at">
+               <%= t "users.index.activated_at" %>
+               </a>
+            </th>
+            <th class="text-center">
+               <a class="sort" href="http://localhost:3000/admin/users?order=asc&amp;sort=admin">
+               <%= t "users.index.admin" %>
+               </a>
+            </th>
+            <th class=""><a class="sort" href="http://localhost:3000/admin/users?order=asc&amp;sort=money">
+               <%= t "users.index.money" %>
+               </a>
+            </th>
+            <th class="text-center">
+               <a class="sort" href="http://localhost:3000/admin/users?order=asc&amp;sort=created_at">
+               <%= t "users.index.created_at" %>
+               </a>
+            </th>
+            <th class="text-center"><a class="sort" href="http://localhost:3000/admin/users?order=asc&amp;sort=updated_at"><%= t "users.index.updated_at" %></a></th>
+            <th class="actions"></th>
+         </tr>
+      </thead>
+      <tbody>
+         <%= will_paginate %>
+         <%= render @users %>
+      </tbody>
+   </table>
+</div>
+<style type="text/css">
+   table {
+   width: 100%;
+   }
+   th {
+   height: 50px;
+   }
+</style>

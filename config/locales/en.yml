@@ -1,4 +1,9 @@
 en:
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
   helpers:
     label:
       user:
@@ -8,6 +13,7 @@ en:
         password_confirmation: "Confirmation"
   layouts:
     title: "Football News"
+    admin: "Admin"
     header:
       home: "Home"
       help: "Help"
@@ -65,5 +71,36 @@ en:
         news: "News"
         rankings: "Rankings"
         match: "Match"
+  users:
+    sign_up: "Sign up"
+    confirmation: "Confirmation"
+    create_account: "Create my account"
+    index:
+      id: "Id"
+      name: "Name"
+      email: "Email"
+      activated: "Activated"
+      activated_at: "Activated at"
+      admin: "Admin"
+      money: "Money"
+      created_at: "Created at"
+      updated_at: "Updated at"
+    create:
+      success: "create success"
+    users_controller:
+      not_found: "User not found"
+      pls_log_in: "Please log in."
+      user_deleted: "User deleted"
+      profile_updated: "Profile updated"
+      failed: "Error: cannot delete "
+    edit:
+      update: "Update"
+      save: "Save"
+    user:
+      sure: "You sure?"
+      delete: "Delete"
+      edit: "Edit"
+  base:
+    no_admin: "You're not admin."
 
 
