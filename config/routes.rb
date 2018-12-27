@@ -10,4 +10,8 @@ Rails.application.routes.draw do
     resources :users
   end
   resources :users, except: [:destroy, :update]
+  resources :matches
+  resources :leagues do
+    get "/rankings", to: "leagues#show"
+  end
 end

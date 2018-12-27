@@ -1,0 +1,9 @@
+<table class="table-rankings">
+   <tr>
+      <th><%= t "rankings.show.rank" %></th>
+      <th><%= t "rankings.show.team" %></th>
+      <th><%= t "rankings.show.point" %></th>
+      <th><%= t "rankings.show.goal_diff" %></th>
+   </tr>
+   <%= render partial: "ranking", collection: @rankings %>
+</table>

@@ -102,5 +102,27 @@ en:
       edit: "Edit"
   base:
     no_admin: "You're not admin."
-
+  rankings:
+    controller:
+      not_found: "Cannot find data"
+    show:
+      rank: "Rank"
+      team: "Team"
+      point: "Point"
+      goal_diff: "Goal diff"
+    index:
+      league: "League"
+      country: "Country"
+      rank: "Rank"
+    league:
+      detail: "Detail"
+  matches:
+    show:
+      not_occur: "Not occur yet"
+      live: "Live"
+      finished: "Finished"
+      not_found: "Match not found"
+      versus: "VS"
+    match:
+      detail: "Detail"
 
