@@ -1,0 +1,13 @@
+.status{
+  width: 32%;
+  float: left;
+}
+#score_bet_price{
+  width: 30% !important;
+  text-align: center;
+}
+.edit_score_bet{
+  margin-top: 300px !important;
+  margin-left: 400px !important;
+  width: 50%;
+}

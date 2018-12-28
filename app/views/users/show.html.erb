@@ -1,10 +1,21 @@
 <% provide(:title, @user.name) %>
+<%= stylesheet_link_tag "https://www.w3schools.com/w3css/4/w3.css" %>
  <div class="row">
    <aside class="col-md-4">
      <section class="user_info">
-       <h1>
-         <%= @user.name %>
-       </h1>
+      <h1 style="margin-top: 50px;"><%= @user.name %></h1>
+       <table class="w3-table">
+          <tr>
+            <th><%= t "users.show.match_id" %></th>
+            <th><%= t "users.show.team_name" %></th>
+            <th><%= t "users.show.price" %></th>
+            <th><%= t "users.show.outcome" %></th>
+            <th colspan="2"><%= t "users.show.action" %></th>
+          </tr>
+          <div class="table">
+            <%= render partial: "score_bet", collection: @user.score_bets %>
+          </div>
+        </table>
      </section>
    </aside>
  </div>

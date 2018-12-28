@@ -10,3 +10,6 @@ matches:
   page: 30
 rankings:
   page: 30
+error: "error"
+success: "success"
+bonus: 2

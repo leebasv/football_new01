@@ -85,8 +85,15 @@ en:
       money: "Money"
       created_at: "Created at"
       updated_at: "Updated at"
+    show:
+      match_id: "Match ID"
+      team_name: "Team"
+      price: "Price"
+      outcome: "Bet"
+      action: "Action"
     create:
       success: "create success"
+      invalid: "cannot log in"
     users_controller:
       not_found: "User not found"
       pls_log_in: "Please log in."
@@ -125,4 +132,21 @@ en:
       versus: "VS"
     match:
       detail: "Detail"
+  score_bet:
+    controller:
+      success_bet: "Successfully bet"
+      fail_bet: "Fail to bet, please contact admin if you think this is an error"
+      not_enough_money: "Not enough money to bet,please insert money"
+      late_bet: "It's too late for bet"
+      not_log_in: "Please log in"
+      has_bet: "%{name} has bet %{team} %{outcome}"
+      success_updated: "Successfully updated"
+      fail_updated: "Fail to update"
+      cannot_find_record: "Cannot find record"
+      delete_success: "Deleted success"
+      delete_fail: "Delete fail"
+    _score_bet:
+      win: "win"
+      lose: "lose"
+      draw: "draw"
 
