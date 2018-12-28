@@ -1,0 +1,10 @@
+<div class="rankings">
+   <table class="table-rankings">
+      <tr>
+         <th><%= t "rankings.index.league" %></th>
+         <th><%= t "rankings.index.country" %></th>
+         <th><%= t "rankings.index.rank" %></th>
+      </tr>
+      <%= render partial: "league", collection: @leagues %>
+   </table>
+</div>

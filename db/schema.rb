@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_25_061113) do
+ActiveRecord::Schema.define(version: 2018_12_27_042633) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -38,15 +38,11 @@ ActiveRecord::Schema.define(version: 2018_12_25_061113) do
 
   create_table "match_results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "match_id"
-    t.integer "team_id1"
-    t.integer "team_id2"
     t.integer "score1"
     t.integer "score2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["match_id"], name: "index_match_results_on_match_id"
-    t.index ["team_id1"], name: "index_match_results_on_team_id1", unique: true
-    t.index ["team_id2"], name: "index_match_results_on_team_id2", unique: true
   end
 
   create_table "matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -56,10 +52,10 @@ ActiveRecord::Schema.define(version: 2018_12_25_061113) do
     t.integer "time"
     t.integer "extra_time1"
     t.integer "extra_time2"
-    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "round_id"
+    t.integer "status"
     t.index ["team_id1", "team_id2"], name: "index_matches_on_team_id1_and_team_id2", unique: true
     t.index ["team_id1"], name: "index_matches_on_team_id1"
     t.index ["team_id2"], name: "index_matches_on_team_id2"
@@ -90,6 +86,8 @@ ActiveRecord::Schema.define(version: 2018_12_25_061113) do
     t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "point"
+    t.integer "hs"
     t.index ["league_id"], name: "index_rankings_on_league_id"
     t.index ["team_id"], name: "index_rankings_on_team_id"
   end
@@ -107,9 +105,9 @@ ActiveRecord::Schema.define(version: 2018_12_25_061113) do
     t.bigint "match_id"
     t.bigint "team_id"
     t.float "price"
-    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status"
     t.index ["match_id"], name: "index_score_bets_on_match_id"
     t.index ["team_id"], name: "index_score_bets_on_team_id"
     t.index ["user_id"], name: "index_score_bets_on_user_id"
