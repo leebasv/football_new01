@@ -9,8 +9,14 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
   end
-  resources :users, except: [:destroy, :update]
-  resources :matches
+  get "/admin", to: "admin/users#index"
+  resources :users
+  resources :matches do
+    delete "/score_bets", to: "score_bets#destroy"
+    get "/score_bets", to: "score_bets#edit"
+    patch "/score_bets", to: "score_bets#update"
+    post "/score_bets", to: "score_bets#create"
+  end
   resources :leagues do
     get "/rankings", to: "leagues#show"
   end

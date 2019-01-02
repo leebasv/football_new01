@@ -8,8 +8,14 @@ module MatchesHelper
       render html: ("<p><strong>" + t("matches.show.live") +
         "</strong></p>").html_safe
     when :finished
-      render html: ("<p><strong>" + t("matches.show.finished") +
-        "</strong></p>").html_safe
+      render_match_result
     end
+  end
+
+  def render_match_result
+    render html: ("<p><strong>" + t("matches.show.finished") +
+      "</strong></p>" + "<p>" + @match.match_result_score1.to_s +
+      "<strong> - </strong>" + @match.match_result_score2.to_s +
+      "</p>").html_safe
   end
 end

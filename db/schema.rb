@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_27_042633) do
+ActiveRecord::Schema.define(version: 2018_12_28_083716) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -101,15 +101,14 @@ ActiveRecord::Schema.define(version: 2018_12_27_042633) do
   end
 
   create_table "score_bets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
     t.bigint "match_id"
-    t.bigint "team_id"
     t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status"
+    t.integer "outcome"
+    t.bigint "user_id"
     t.index ["match_id"], name: "index_score_bets_on_match_id"
-    t.index ["team_id"], name: "index_score_bets_on_team_id"
     t.index ["user_id"], name: "index_score_bets_on_user_id"
   end
 
@@ -163,6 +162,5 @@ ActiveRecord::Schema.define(version: 2018_12_27_042633) do
   add_foreign_key "rankings", "teams"
   add_foreign_key "rounds", "leagues"
   add_foreign_key "score_bets", "matches"
-  add_foreign_key "score_bets", "teams"
   add_foreign_key "score_bets", "users"
 end

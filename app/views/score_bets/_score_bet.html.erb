@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag "score_bet" %>
+<legend>BET FOR HOME TEAM</legend>
+<%= form_for @score_bet, url: match_score_bets_path(match_id: params[:id]), method: :post do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <li class="status">
+  <span>Win</span>
+  <%= f.radio_button :outcome, t("score_bet._score_bet.win") %>
+  </li>
+  <li class="status">
+  <span>Draw</span>
+  <%= f.radio_button :outcome, t("score_bet._score_bet.draw") %>
+  </li>
+  <li class="status">
+  <span>Lose</span>
+  <%= f.radio_button :outcome, t("score_bet._score_bet.lose") %>
+  </li>
+    <span>Amount</span>
+    <%= f.text_field :price %>
+  <%= f.submit "Bet", class: "btn btn-primary" %>
+<% end %>
+

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: :show
+  before_action :load_user, only: [:show, :edit, :update]
+  before_action :check_update, only: :update
 
   def show; end
 
@@ -18,7 +19,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update; end
+
   private
+
+  def check_update
+    if @user.update_attributes user_params
+      render json: {message: t("score_bet.controller.success_updated"),
+                    type: Settings.success}
+    else
+      render json: {message: t("score_bet.controller.fail_updated"),
+                    type: Settings.error}
+    end
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :password,

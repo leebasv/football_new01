@@ -14,7 +14,7 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
   validates :password, presence: true,
-    length: {minimum: Settings.users.password_length}
+    length: {minimum: Settings.users.password_length}, allow_nil: true
   has_secure_password
   def self.digest string
     cost = if ActiveModel::SecurePassword.min_cost
@@ -23,5 +23,12 @@ class User < ApplicationRecord
              BCrypt::Engine.cost
            end
     BCrypt::Password.create(string, cost: cost)
+  end
+
+  def reduce_money price
+    ActiveRecord::Base.transaction do
+      new_money = money.to_f - price.to_f
+      update_attributes money: new_money
+    end
   end
 end
