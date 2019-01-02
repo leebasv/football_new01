@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "score_bet" %>
-<legend>BET FOR HOME TEAM</legend>
+<legend><%= t "score_bet._score_bet.bet" %></legend>
 <%= form_for @score_bet, url: match_score_bets_path(match_id: params[:id]), method: :post do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <li class="status">

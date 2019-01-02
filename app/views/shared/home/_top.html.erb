@@ -87,7 +87,7 @@
                           <%= t "shared.home.top.about" %>
                           </a>
                         </li>
-                        <li><a href="team.html"><%= t "shared.home.top.team" %></a></li>
+                        <li><%= link_to t("shared.home.top.team"), teams_path %></li>
                         <li>
                           <a href="news.html"><%=
                             t "shared.home.top.news" %></a>
@@ -109,10 +109,14 @@
                   <div class="search-bar">
                     <div id="imaginary_container">
                       <div class="input-group stylish-input-group">
-                        <input type="text" class="form-control" placeholder="Search" >
-                        <span class="input-group-addon">
+                        <%= form_tag(teams_path, method: :get) do %>
+                          <%= text_field_tag :search, params[:search],
+                            placeholder: "Search teams,league by country" %>
+                          <span class="input-group-addon">
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </span>
+                        <% end %>
+
                       </div>
                     </div>
                   </div>

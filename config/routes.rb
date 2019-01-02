@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   resources :leagues do
     get "/rankings", to: "leagues#show"
   end
+  resources :teams, only: :index
 end

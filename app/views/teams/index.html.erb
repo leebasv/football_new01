@@ -1,0 +1,12 @@
+<%= stylesheet_link_tag "https://www.w3schools.com/w3css/4/w3.css" %>
+<%= stylesheet_link_tag "tablew3" %>
+<div class="teams">
+   <table class="w3-table">
+      <tr>
+         <th><%= t "teams.index.id" %></th>
+         <th><%= t "teams.index.name" %></th>
+         <th><%= t "teams.index.stadium" %></th>
+      </tr>
+      <%= render partial: "team", collection: @teams %>
+   </table>
+</div>
