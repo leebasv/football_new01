@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
     resources :matches
+    resources :match_results
   end
   get "/admin", to: "admin/users#index"
   resources :users

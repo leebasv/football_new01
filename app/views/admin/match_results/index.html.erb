@@ -1,0 +1,40 @@
+<li>
+  <input type="button" class="btn btn-primary" name="btnAdd" value="Add Match Result" onclick="window.location.href='<%= new_admin_match_result_url %>'" >
+</li>
+<div class="table-container">
+   <table class="trestle-table">
+      <thead>
+        <tr>
+          <th class="">
+            <a class="sort" href="http://localhost:3000/admin/match_results?order=asc&amp;sort=name">
+              <%= t "match_results.index.matchid" %>
+            </a>
+          </th>
+          <th class="">
+            <a class="sort" href="http://localhost:3000/admin/match_results?order=asc&amp;sort=name">
+              <%= t "match_results.index.namehome" %>
+            </a>
+          </th>
+          <th class="">
+            <a class="sort" href="http://localhost:3000/admin/match_results?order=asc&amp;sort=name">
+              <%= t "match_results.index.score1" %>
+            </a>
+          </th>
+          <th class="">
+            <a class="sort" href="http://localhost:3000/admin/match_results?order=asc&amp;sort=name">
+              <%= t "match_results.index.score2" %>
+            </a>
+          </th>
+          <th class="">
+            <a class="sort" href="http://localhost:3000/admin/match_results?order=asc&amp;sort=name">
+              <%= t "match_results.index.nameguest" %>
+            </a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+         <%= will_paginate %>
+         <%= render @match_results %>
+      </tbody>
+   </table>
+</div>
