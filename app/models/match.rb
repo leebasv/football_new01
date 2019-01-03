@@ -14,6 +14,13 @@ class Match < ApplicationRecord
 
   validates :team_id1, presence: true
   validates :team_id2, presence: true
+  validates :extra_time1, numericality: true
+  validates :extra_time2, numericality: true
+  validates :time, numericality: true
+  validates :round_id, numericality: true
+
+  delegate :name, to: :team1, prefix: true
+  delegate :name, to: :team2, prefix: true
 
   def check_match_finish
     return if score_bets.nil? || match_date >= Time.now

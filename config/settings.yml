@@ -8,6 +8,11 @@ application:
   font_awesome: "https://use.fontawesome.com/releases/v5.6.3/css/all.css"
 matches:
   page: 30
+  max: 15
+  min: 0
+  value: 1
+  valuemin: 90
+  valueex: 0
 rankings:
   page: 30
 teams:
@@ -15,3 +20,6 @@ teams:
 error: "error"
 success: "success"
 bonus: 2
+match_per: 15
+seconds: 60
+minhalftime: 15
