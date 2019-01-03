@@ -71,6 +71,13 @@ en:
         news: "News"
         rankings: "Rankings"
         match: "Match"
+  teams:
+    controller:
+      not_found: "No team found"
+    index:
+      id: "ID"
+      name: "Name"
+      stadium: "Stadium"
   users:
     sign_up: "Sign up"
     confirmation: "Confirmation"
@@ -149,4 +156,5 @@ en:
       win: "win"
       lose: "lose"
       draw: "draw"
+      bet: "BET FOR HOME TEAM"
 
