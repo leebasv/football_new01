@@ -69,9 +69,14 @@
             <div class="leftside-navigation">
                <ul class="sidebar-menu" id="nav-accordion">
                   <li>
-                     <a class="active" href="index.html">
-                     <span><%= t "admin.users" %></span>
-                     </a>
+                     <%= link_to admin_users_path do %>
+                        <span><%= t "admin.users" %></span>
+                     <% end %>
+                  </li>
+                  <li>
+                     <%= link_to admin_matches_path do %>
+                        <span><%= t "admin.matches" %></span>
+                     <% end %>
                   </li>
                </ul>
             </div>

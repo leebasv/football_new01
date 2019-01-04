@@ -1,4 +1,5 @@
 class Admin::BaseController < ApplicationController
+  include MatchesHelper
   before_action :logged_in
   before_action :require_admin
 

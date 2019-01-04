@@ -139,6 +139,22 @@ en:
       versus: "VS"
     match:
       detail: "Detail"
+      sure: "You sure?"
+      delete: "Delete"
+      edit: "Edit"
+    matches_controller:
+      not_found: "Match not found"
+      pls_log_in: "Please log in."
+      match_deleted: "Math deleted"
+      match_updated: "Match updated"
+      failed: "Error: cannot delete "
+    create:
+      create1: "create"
+      success: "create success"
+      error: "error"
+    edit:
+      update: "Update"
+      save: "Save"
   score_bet:
     controller:
       success_bet: "Successfully bet"

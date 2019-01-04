@@ -25,6 +25,7 @@ class Admin::UsersController < Admin::BaseController
   def create
     @user = User.new user_params
     if @user.save
+      set_status_by_time
       flash[:success] = t "users.create.success"
       redirect_to admin_users_path
     else

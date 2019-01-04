@@ -1,0 +1,34 @@
+<%= form_for @match, url:  yield(:link) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :team_home %>
+  <%= f.collection_select :team_id1, get_teams(:name), :id, :name,
+    prompt: :select %>
+
+  <%= f.label :team_guest %>
+  <%= f.collection_select :team_id2, get_teams(:name), :id, :name,
+    prompt: :select %>
+
+  <%= f.label :date_of_match %>
+  <%= f.datetime_select :match_date %>
+
+  <br>
+  <%= f.label :extra_time_1 %>
+  <%= f.number_field :extra_time1, value: Settings.matches.valueex, min: Settings
+    .matches.min, max: Settings.matches.max, class: "form-control" %>
+
+  <%= f.label :extra_time_2 %>
+  <%= f.number_field :extra_time2, value: Settings.matches.valueex, min: Settings
+    .matches.min, max: Settings.matches.max, class: "form-control" %>
+
+  <%= f.label :round_id %>
+  <%= f.number_field :round_id, value: Settings.matches.value, min: Settings
+    .matches.value, class: "form-control" %>
+
+  <%= f.label :time %>
+  <%= f.number_field :time, value: Settings.matches.valuemin ,min: Settings
+    .matches.min, class: "form-control" %>
+
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

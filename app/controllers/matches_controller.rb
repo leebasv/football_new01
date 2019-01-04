@@ -1,11 +1,14 @@
 class MatchesController < ApplicationController
+  include MatchesHelper
   before_action :load_match, :build_score_bet, only: :show
   def index
     @matches = Match.newest.paginate page: params[:page],
       per_page: Settings.matches.page
   end
 
-  def show; end
+  def show
+    set_status_by_time @match
+  end
 
   private
 
