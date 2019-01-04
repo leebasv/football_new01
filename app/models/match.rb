@@ -30,6 +30,7 @@ class Match < ApplicationRecord
       next unless score_bet.user
       check_status score_bet
     end
+    score_bet.completed!
   end
 
   def check_result
