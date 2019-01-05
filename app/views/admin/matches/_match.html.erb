@@ -1,5 +1,8 @@
+<td class=""><%= match.id %></td>
 <td class=""><%= match.team1.name %></td>
 <td class=""><%= match.team2.name %></td>
+<td class=""><%= match.status %></td>
+
 
 <td class="actions"><%= link_to t("matches.match.delete"), admin_match_path(match), method: :delete,
    data: { confirm: t("matches.match.sure") } %></td>

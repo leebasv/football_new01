@@ -155,6 +155,31 @@ en:
     edit:
       update: "Update"
       save: "Save"
+  match_results:
+    edit:
+      update: "Update"
+      save: "Save"
+    match_result:
+      detail: "Detail"
+      sure: "You sure?"
+      delete: "Delete"
+      edit: "Edit"
+    match_results_controller:
+      not_found: "Match result not found"
+      pls_log_in: "Please log in."
+      match_result_deleted: "Math result deleted"
+      match_result_updated: "Match result updated"
+      failed: "Error: cannot delete "
+    create:
+      success: "create success"
+      error: "error"
+    index:
+      matchid: "match id"
+      score1: "home score"
+      score2: "guest score"
+      namehome: "team home"
+      nameguest: "team guest"
+    add_result: "add result"
   score_bet:
     controller:
       success_bet: "Successfully bet"

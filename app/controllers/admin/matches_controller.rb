@@ -1,7 +1,7 @@
 class Admin::MatchesController < Admin::BaseController
-  skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token, only: :destroy
   before_action :load_match, except: [:index, :new, :create]
-  before_action only: [:update, :create] do
+  before_action only: :update do
     set_status_by_time @match
   end
 
@@ -27,6 +27,7 @@ class Admin::MatchesController < Admin::BaseController
 
   def create
     @match = Match.new match_params
+    set_status_by_time @match
     if @match.save
       flash[:info] = t "matches.create.success"
       redirect_to admin_matches_path

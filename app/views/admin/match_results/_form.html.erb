@@ -1,0 +1,17 @@
+<%= form_for @match_result, url:  yield(:link) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :match_id %>
+  <%= f.number_field :match_id, value: Settings.match_results.value, min: Settings
+    .match_results.min, class: "form-control" %>
+
+  <%= f.label :score_home %>
+  <%= f.number_field :score1, value: Settings.match_results.value, min: Settings
+    .match_results.min, class: "form-control" %>
+
+  <%= f.label :score_guest %>
+  <%= f.number_field :score2, value: Settings.match_results.value, min: Settings
+    .match_results.min, class: "form-control" %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>
