@@ -1,0 +1,33 @@
+<%= form_for @league, url: yield(:link) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :country %>
+  <%= f.text_field :country, class: "form-control" %>
+
+  <%= f.label :start_date %>
+  <%= f.datetime_select :start_date %>
+
+  <%= f.label :end_date %>
+  <%= f.datetime_select :end_date %>
+
+  <%= f.label :continent %>
+  <%= f.text_field :continent, class: "form-control" %>
+
+  <%= f.label :match_time %>
+  <%= f.number_field :match_time, value: Settings.matches.valuemin ,min: Settings
+    .matches.min, class: "form-control" %>
+
+  <%= f.label :number_of_match %>
+  <%= f.number_field :number_of_match, class: "form-control" %>
+
+  <%= f.label :number_of_team %>
+  <%= f.number_field :number_of_team, class: "form-control" %>
+
+  <%= f.label :number_of_round %>
+  <%= f.number_field :number_of_round, class: "form-control" %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

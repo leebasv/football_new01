@@ -27,3 +27,7 @@ bonus: 2
 match_per: 15
 seconds: 60
 minhalftime: 15
+leagues:
+  page: 30
+  value: 0
+  min: 0

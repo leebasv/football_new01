@@ -180,6 +180,34 @@ en:
       namehome: "team home"
       nameguest: "team guest"
     add_result: "add result"
+  leagues:
+    edit:
+      update: "Update"
+      save: "Save"
+    league:
+      detail: "Detail"
+      sure: "You sure?"
+      delete: "Delete"
+      edit: "Edit"
+    leagues_controller:
+      not_found: "League not found"
+      pls_log_in: "Please log in."
+      league_deleted: "League deleted"
+      league_updated: "League updated"
+      failed: "Error: cannot delete "
+    create:
+      success: "create success"
+      error: "error"
+    index:
+      name: "name"
+      country: "country"
+      start_date: "start date"
+      edn_date: "end date"
+      continent: "continent"
+      number_of_match: "number of match"
+      number_of_team: "number_of_team"
+      match_time: "macth time"
+      number_of_round: "number of round"
   score_bet:
     controller:
       success_bet: "Successfully bet"

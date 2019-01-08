@@ -1,0 +1,13 @@
+<td class=""><%= league.name %></td>
+<td class=""><%= league.country %></td>
+<td class=""><%= league.start_date %></td>
+<td class=""><%= league.end_date %></td>
+<td class=""><%= league.continent %></td>
+<td class=""><%= league.number_of_match %></td>
+<td class=""><%= league.number_of_team %></td>
+<td class=""><%= league.match_time %></td>
+<td class=""><%= league.number_of_round %></td>
+
+<td class="actions"><%= link_to t("leagues.league.delete"), admin_league_path(league), method: :delete,
+   data: { confirm: t("leagues.league.sure") } %></td>
+<td class="actions"><%= link_to t("leagues.league.edit"), edit_admin_league_path(league) %></td>
