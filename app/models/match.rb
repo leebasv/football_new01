@@ -1,12 +1,14 @@
 class Match < ApplicationRecord
+  include CheckUp
+
   scope :newest, ->{order match_date: :asc}
 
   enum status: {not_occur: 0, live: 1, finished: 2}
   belongs_to :team1, class_name: Team.name, foreign_key: :team_id1
   belongs_to :team2, class_name: Team.name, foreign_key: :team_id2
 
-  has_one :match_result
-  has_many :score_bets, foreign_key: :match_id
+  has_one :match_result, dependent: :destroy
+  has_many :score_bets, foreign_key: :match_id, dependent: :destroy
   delegate :name, to: :team1, prefix: true
   delegate :name, to: :team2, prefix: true
   delegate :score1, to: :match_result, prefix: true
@@ -24,9 +26,9 @@ class Match < ApplicationRecord
 
   def check_match_finish
     return if score_bets.nil? || match_date >= Time.now
-    score_bets.each do |s|
-      next unless s.outcome.to_sym == check_result.to_sym
-      s.win
+    score_bets.each do |score_bet|
+      next unless score_bet.user
+      check_status score_bet
     end
   end
 
