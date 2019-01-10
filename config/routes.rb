@@ -24,4 +24,7 @@ Rails.application.routes.draw do
     get "/rankings", to: "leagues#show"
   end
   resources :teams, only: :index
+  resources :news do
+    resources :comments
+  end
 end

@@ -25,6 +25,35 @@ en:
       log_out: "Log out"
       users: "Users"
       account: "Account"
+  comments:
+    message: "Message"
+    update: "Update"
+    comment: "Comments"
+    controller:
+      not_found: "Comment not found"
+      new_not_found: "New not found"
+      deleted_success: "Deleted success"
+      deleted_fail: "Deleting fail"
+      error: "cannot comment"
+      updated: "Updated"
+      error_edit: "Cannot edit comment"
+    form:
+      not_published: "Your email address will not be published. Required fields are marked"
+  news:
+    comment:
+      edit: "Edit"
+      delete: "Delete"
+    show:
+      leave_comment: "Leave a comment"
+      must_log: "You must log in to comment"
+      load_more: "Load more"
+      show_less: "Show less"
+      comments: "COMMENTS: (%{href})"
+      by: "by %{person}"
+      on_date: "on %{date}"
+      share: "Share"
+    controller:
+      not_found: "New not found"
   sessions:
     new:
       title: "Log in"
