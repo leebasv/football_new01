@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :matches
     resources :match_results
     resources :leagues
+    resources :notifications
   end
   get "/admin", to: "admin/users#index"
   resources :users

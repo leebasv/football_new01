@@ -81,14 +81,19 @@ class ScoreBetsController < ApplicationController
 
   def check_valid_bet
     if logged_in?
-      @match = Match.find_by id: params[:match_id]
-      if params[:score_bet][:price].to_f <= current_user.money.to_f
-        check_date
-      else
-        flash.now[:error] = t "score_bet.controller.not_enough_money"
-      end
+      bet_process
     else
       redirect_to login_path
+    end
+  end
+
+  def bet_process
+    @match = Match.find_by id: params[:match_id]
+    if params[:score_bet][:price].to_f <= current_user.money.to_f
+      check_date
+    else
+      flash.now[:error] = t "score_bet.controller.not_enough_money"
+      redirect_to match_path(@match)
     end
   end
 

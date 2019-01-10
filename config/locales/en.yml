@@ -218,6 +218,7 @@ en:
       match_result_deleted: "Math result deleted"
       match_result_updated: "Match result updated"
       failed: "Error: cannot delete "
+      cannot_update: "cannot update"
     create:
       success: "create success"
       error: "error"
@@ -276,4 +277,14 @@ en:
       lose: "lose"
       draw: "draw"
       bet: "BET FOR HOME TEAM"
-
+  notifications:
+    controller:
+      deleted_success: "deleted success"
+      deleted_failed: "deleted failed"
+      not_found: "not found"
+    index:
+      id: "ID"
+      user: "User"
+      message: "Message"
+      create_at: "Created at"
+      updated_at: "Updated_at"

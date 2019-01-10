@@ -38,11 +38,15 @@ ActiveRecord::Schema.define(version: 2019_01_05_035534) do
 
   create_table "match_results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "match_id"
+    t.integer "team_id1"
+    t.integer "team_id2"
     t.integer "score1"
     t.integer "score2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["match_id"], name: "index_match_results_on_match_id"
+    t.index ["team_id1"], name: "index_match_results_on_team_id1", unique: true
+    t.index ["team_id2"], name: "index_match_results_on_team_id2", unique: true
   end
 
   create_table "matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
