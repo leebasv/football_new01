@@ -7,7 +7,6 @@ class CreateMatches < ActiveRecord::Migration[5.2]
       t.integer :time
       t.integer :extra_time1
       t.integer :extra_time2
-      t.integer :status
 
       t.timestamps
     end

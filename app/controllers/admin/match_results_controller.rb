@@ -15,10 +15,10 @@ class Admin::MatchResultsController < Admin::BaseController
 
   def update
     if @match_result.update_attributes match_result_params
-      flash[:success] = t "match_results
-        .match_results_controller.match_result_updated"
+      flash[:success] = t "match_results.controller.match_result_updated"
       redirect_to admin_match_results_path
     else
+      flash[:error] = t "match_results.controller.cannot_update"
       render :edit
     end
   end
@@ -44,7 +44,7 @@ class Admin::MatchResultsController < Admin::BaseController
     if @match_result.destroy
       flash[:success] = t "match_results.controller.match_result_deleted"
     else
-      flash[:warning] = t "match_results.match_results_controller.failed"
+      flash[:warning] = t "match_results.controller.failed"
     end
     redirect_to admin_match_results_path
   end
@@ -54,7 +54,7 @@ class Admin::MatchResultsController < Admin::BaseController
   def load_match_result
     @match_result = MatchResult.find_by id: params[:id]
     return if @match_result
-    flash[:warning] = t "match_results.match_results_controller.not_found"
+    flash[:warning] = t "match_results.controller.not_found"
     redirect_to admin_match_result_path
   end
 

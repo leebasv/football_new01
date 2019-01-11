@@ -5,7 +5,6 @@ class CreateScoreBets < ActiveRecord::Migration[5.2]
       t.references :match, index: true, foreign_key: true
       t.references :team, index: true, foreign_key: true
       t.float :price
-      t.string :status
 
       t.timestamps
     end

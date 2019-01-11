@@ -1,0 +1,35 @@
+<div class="table-container">
+   <table class="trestle-table">
+      <thead>
+         <tr>
+            <th class="">
+               <a class="sort" href="">
+                  <%= t "notifications.index.user" %>
+               </a>
+            </th>
+            <th class="">
+               <a class="sort" href="">
+                  <%= t "notifications.index.message" %>
+               </a>
+            </th>
+            <th class="text-center">
+               <a class="sort" href="">
+                  <%= t "notifications.index.create_at" %>
+               </a>
+            </th>
+            <th class="text-center">
+               <a class="sort" href="">
+                  <%= t "notifications.index.updated_at" %>
+               </a>
+            </th>
+            <th class="text-center"><a class="sort" href="">
+              <%= t "users.index.updated_at" %></a></th>
+            <th class="actions"></th>
+         </tr>
+      </thead>
+      <tbody>
+         <%= will_paginate %>
+         <%= render @notifications %>
+      </tbody>
+   </table>
+</div>
