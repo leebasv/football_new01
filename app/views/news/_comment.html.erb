@@ -10,7 +10,7 @@
         <span class="c_date"><%= l(comment.created_at, format: :short)%></span>
       </p>
       <p class="msg"><h4 class="message"><%= comment.message %></h4>
-         <% if logged_in? %>
+         <% if user_signed_in? %>
            <% if current_user.id == comment.user.id %>
            <h2>
               <%= link_to t("news.comment.edit"),

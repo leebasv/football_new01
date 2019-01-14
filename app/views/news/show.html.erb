@@ -35,7 +35,7 @@
       </div>
       <div class="commant-section">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <% if logged_in? %>
+          <% if user_signed_in? %>
             <h3><%= t("comments.show.leave_comment") %></h3>
             <div class="form-command row">
               <div class="ajax-form-create">
