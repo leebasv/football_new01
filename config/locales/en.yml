@@ -115,9 +115,10 @@ en:
     controller:
       not_found: "No team found"
     index:
-      id: "ID"
       name: "Name"
       stadium: "Stadium"
+      nation: "National"
+      search: "by name national, league"
   users:
     sign_up: "Sign up"
     confirmation: "Confirmation"
