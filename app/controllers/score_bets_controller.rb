@@ -80,7 +80,7 @@ class ScoreBetsController < ApplicationController
   end
 
   def check_valid_bet
-    if logged_in?
+    if user_signed_in?
       bet_process
     else
       redirect_to login_path

@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   before_save{email.downcase!}
@@ -14,17 +18,6 @@ class User < ApplicationRecord
     length: {maximum: Settings.users.email_length},
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
-  validates :password, presence: true,
-    length: {minimum: Settings.users.password_length}, allow_nil: true
-  has_secure_password
-  def self.digest string
-    cost = if ActiveModel::SecurePassword.min_cost
-             BCrypt::Engine::MIN_COST
-           else
-             BCrypt::Engine.cost
-           end
-    BCrypt::Password.create(string, cost: cost)
-  end
 
   def reduce_money price
     ActiveRecord::Base.transaction do

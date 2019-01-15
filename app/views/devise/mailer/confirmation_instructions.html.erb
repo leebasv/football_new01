@@ -1,0 +1,5 @@
+<p><%= t("devise.mailer.instructions.welcome", email: @email) %></p>
+
+<p><%= t("devise.mailer.instructions.instruction") %></p>
+
+<p><%= link_to t("devise.mailer.instructions.confirm"), confirmation_url(@resource, confirmation_token: @token) %></p>

@@ -1,23 +1,9 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update]
   before_action :check_update, only: :update
+  before_action :authenticate_user!
 
   def show; end
-
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new user_params
-    if @user.save
-      log_in @user
-      flash[:success] = t "users.create.success"
-      redirect_to @user
-    else
-      render :new
-    end
-  end
 
   def edit; end
 
@@ -27,11 +13,11 @@ class UsersController < ApplicationController
 
   def check_update
     if @user.update_attributes user_params
-      render json: {message: t("score_bet.controller.success_updated"),
-                    type: Settings.success}
+      flash[:success] = t "score_bet.controller.success_updated"
+      redirect_to user_path(@user)
     else
-      render json: {message: t("score_bet.controller.fail_updated"),
-                    type: Settings.error}
+      flash[:error] = t "score_bet.controller.fail_updated"
+      render :edit
     end
   end
 
