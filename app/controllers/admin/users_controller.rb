@@ -1,4 +1,5 @@
 class Admin::UsersController < Admin::BaseController
+  authorize_resource class: false
   skip_before_action :verify_authenticity_token
   before_action :load_user, except: [:index, :new, :create]
 

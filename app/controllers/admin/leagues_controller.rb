@@ -1,4 +1,5 @@
 class Admin::LeaguesController < Admin::BaseController
+  load_and_authorize_resource
   before_action :load_league, except: [:index, :new, :create]
   skip_before_action :verify_authenticity_token, only: :destroy
 

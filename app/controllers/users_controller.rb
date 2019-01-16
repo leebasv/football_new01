@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource
   before_action :load_user, only: [:show, :edit, :update]
   before_action :check_update, only: :update
   before_action :authenticate_user!
