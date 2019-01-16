@@ -97,19 +97,6 @@
                     </div>
                     <!-- /.nav-collapse -->
                   </nav>
-                  <div class="search-bar">
-                    <div id="imaginary_container">
-                      <div class="input-group stylish-input-group">
-                        <%= form_tag(teams_path, method: :get) do %>
-                          <%= text_field_tag :search, params[:search],
-                            placeholder: "Search teams,league by country" %>
-                          <span class="input-group-addon">
-                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                        </span>
-                        <% end %>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
