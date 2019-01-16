@@ -20,9 +20,17 @@ class User < ApplicationRecord
     uniqueness: {case_sensitive: false}
 
   def reduce_money price
-    ActiveRecord::Base.transaction do
-      new_money = money.to_f - price.to_f
-      update_attributes money: new_money
-    end
+    new_money = money.to_f - price.to_f
+    update_attributes money: new_money
+  end
+
+  def extra_money extra
+    new_money = money.to_f + extra.to_f
+    update_attributes money: new_money
+  end
+
+  def refund_money price
+    new_money = money.to_f + price.to_f
+    update_attributes money: new_money
   end
 end

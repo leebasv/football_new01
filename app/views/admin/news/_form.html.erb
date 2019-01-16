@@ -1,0 +1,17 @@
+<%= form_for(@new, url:  yield(:link), method: yield(:action)) do |f|%>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control" %>
+  <br>
+
+  <%= f.label :content %>
+  <%= f.text_field :content, class: "form-control" %>
+
+  <br>
+
+  <%= f.label :transfer %>
+  <%= f.number_field :transfer, min: Settings.transfer.min, max: Settings.transfer.max %>
+  <br>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

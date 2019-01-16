@@ -8,9 +8,7 @@ class ScoreBet < ApplicationRecord
   validates :outcome, presence: true
 
   def win
-    ActiveRecord::Base.transaction do
-      bonus_money = price * Settings.bonus
-      user.update_attributes! money: user.money + bonus_money
-    end
+    bonus_money = price * Settings.bonus
+    user.update_attributes! money: user.money + bonus_money
   end
 end

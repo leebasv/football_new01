@@ -4,15 +4,53 @@
 <div class="table-container">
    <table class="trestle-table">
       <thead>
-         <th><%= t ".name" %></th>
-         <th><%= t ".country" %></th>
-         <th><%= t ".start_date" %></th>
-         <th><%= t ".end_date" %></th>
-         <th><%= t ".continent" %></th>
-         <th><%= t ".number_of_match" %></th>
-         <th><%= t ".number_of_team" %></th>
-         <th><%= t ".match_time" %></th>
-         <th><%= t ".number_of_round" %></th>
+         <tr>
+            <th class="">
+               <a class="sort" href="">
+                  <%= t ".name" %>
+               </a>
+            </th>
+            <th class="">
+               <a class="sort" href="">
+                  <%= t ".country" %>
+               </a>
+            </th>
+            <th class="">
+               <a class="sort" href="">
+                  <%= t ".start_date" %>
+               </a>
+            </th>
+            <th class="">
+               <a class="sort" href="">
+                  <%= t ".end_date" %>
+               </a>
+            </th>
+            <th class="">
+               <a class="sort" href="">
+                  <%= t ".continent" %>
+               </a>
+            </th>
+            <th class="">
+               <a class="sort" href="">
+                  <%= t ".number_of_match" %>
+               </a>
+            </th>
+            <th class="">
+               <a class="sort" href="">
+                  <%= t ".number_of_team" %>
+               </a>
+            </th>
+            <th class="">
+               <a class="sort" href="">
+                  <%= t ".match_time" %>
+               </a>
+            </th>
+            <th class="">
+               <a class="sort" href="">
+                  <%= t ".number_of_round" %>
+               </a>
+            </th>
+         </tr>
       </thead>
       <tbody>
          <%= will_paginate %>

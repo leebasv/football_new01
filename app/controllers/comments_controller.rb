@@ -70,7 +70,7 @@ class CommentsController < ApplicationController
     else
       flash[:error] = t "comments.controller.error_edit"
     end
-    redirect_to news_path(@new)
+    redirect_to news_path(id: @comment.new_id)
   end
 
   def comment_params

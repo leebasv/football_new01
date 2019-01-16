@@ -1,3 +1,4 @@
+<tr>
 <td class=""><%= league.name %></td>
 <td class=""><%= league.country %></td>
 <td class=""><%= league.start_date %></td>
@@ -11,3 +12,4 @@
 <td class="actions"><%= link_to t("leagues.league.delete"), admin_league_path(league), method: :delete,
    data: { confirm: t("leagues.league.sure") } %></td>
 <td class="actions"><%= link_to t("leagues.league.edit"), edit_admin_league_path(league) %></td>
+</tr>

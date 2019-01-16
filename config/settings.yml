@@ -40,3 +40,6 @@ leagues:
 min_half_time: 15
 notifies:
   page: 30
+transfer:
+  min: 0
+  max: 1

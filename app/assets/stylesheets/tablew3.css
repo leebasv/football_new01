@@ -4,3 +4,9 @@
 .table-rankings{
   margin-top: 300px !important;
 }
+table {
+width: 100%;
+}
+th {
+height: 50px;
+}

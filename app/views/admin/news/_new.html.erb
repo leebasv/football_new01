@@ -1,0 +1,7 @@
+<tr>
+<td class="poster"><%= info.user_id %></td>
+<td class="title"><%= info.title %></td>
+<td class="content"><%= truncate(info.content, length: Settings.content.length) %></td>
+<td class="actions"><%= link_to t("news.new.delete"), admin_news_path(info), method: :delete, data: { confirm: t("news.new.sure") } %></td>
+<td class="actions"><%= link_to t("news.new.edit"), edit_admin_news_path(info) %></td>
+</tr>

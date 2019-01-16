@@ -1,0 +1,10 @@
+<% provide :button_text, t("news.edit.save") %>
+<% provide :link, admin_news_path %>
+<% provide :action, :put %>
+<h1><%= t("news.edit.update") %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render partial: "form", locals: {url: admin_news_path(@new)} %>
+  </div>
+</div>

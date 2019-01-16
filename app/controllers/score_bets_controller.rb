@@ -4,6 +4,7 @@ class ScoreBetsController < ApplicationController
   before_action :load_score_bet, only: [:edit, :update, :destroy]
   before_action :check_update, only: :update
   before_action :check_deleted, only: :destroy
+
   def new
     @score_bet = ScoreBet.new
   end
@@ -23,7 +24,7 @@ class ScoreBetsController < ApplicationController
 
   private
 
-  def score_params
+  def score_bet_params
     params.require(:score_bet).permit :price, :outcome
   end
 
@@ -37,14 +38,16 @@ class ScoreBetsController < ApplicationController
   def check_deleted
     return if @score_bet.match.finished?
     if @score_bet.destroy
+      @score_bet.user.refund_money @score_bet.price
       flash.now[:alert] = t "score_bet.controller.delete_success"
     else
       flash.now[:error] = t "score_bet.controller.delete_fail"
     end
+
   end
 
   def check_update
-    if @score_bet.update_attributes score_params
+    if @score_bet.update_attributes score_bet_params
       flash.now[:alert] = t "score_bet.controller.success_updated"
       redirect_to user_path(current_user)
     else

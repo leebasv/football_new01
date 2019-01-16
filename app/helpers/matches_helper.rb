@@ -4,6 +4,7 @@ module MatchesHelper
     when :not_occur
       render html: ("<p><strong>" + t("matches.show.not_occur") +
         "</strong></p>").html_safe
+      render "score_bets/score_bet"
     when :live
       render html: ("<p><strong>" + t("matches.show.live") +
         "</strong></p>").html_safe

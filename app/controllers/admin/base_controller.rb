@@ -7,7 +7,7 @@ class Admin::BaseController < ApplicationController
   private
   def require_admin
     return if user_signed_in? && current_user.admin?
-    flash[:danger] = t "base.no_admin"
+    raise CanCan::AccessDenied
     redirect_to root_path
   end
 end

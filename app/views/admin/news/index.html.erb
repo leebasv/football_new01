@@ -1,0 +1,30 @@
+<%= stylesheet_link_tag "tablew3" %>
+<li>
+  <%= link_to t("news.index.add_new"), new_admin_news_path %>
+<div class="table-container">
+  <table class="trestle-table">
+    <thead>
+      <tr>
+        <th class="">
+          <a class="sort" href="">
+            <%= t "news.index.user_id" %>
+          </a>
+        </th>
+        <th class="">
+            <a class="sort" href="">
+              <%= t "news.index.title" %>
+            </a>
+        </th>
+        <th class="">
+          <a class="sort" href="">
+            <%= t "news.index.content" %>
+          </a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= will_paginate %>
+      <%= render partial: "new", collection: @news, as: :info %>
+    </tbody>
+  </table>
+</div>

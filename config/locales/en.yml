@@ -54,6 +54,25 @@ en:
       share: "Share"
     controller:
       not_found: "New not found"
+      new_updated: "Updated success"
+      new_deleted: "New deleted successfully"
+      failed: "Cannot delete new"
+    create:
+      success: "Created new successfully"
+      error: "Cannot create new"
+    index:
+      id: "ID"
+      user_id: "User ID"
+      title: "Title"
+      content: "Content"
+    new:
+      delete: "Delete"
+      sure: "Are you sure?"
+      edit: "Edit"
+      create: "Create"
+    edit:
+      save: "Save"
+      update: "Update"
   sessions:
     new:
       title: "Log in"
