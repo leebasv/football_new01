@@ -1,4 +1,5 @@
 class Admin::NotificationsController < Admin::BaseController
+  load_and_authorize_resource
   skip_before_action :verify_authenticity_token, only: :destroy
   before_action :load_notification, only: :destroy
 

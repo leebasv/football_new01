@@ -1,4 +1,5 @@
 class ScoreBetsController < ApplicationController
+  load_and_authorize_resource
   before_action :check_valid_bet, only: :create
   before_action :load_score_bet, only: [:edit, :update, :destroy]
   before_action :check_update, only: :update

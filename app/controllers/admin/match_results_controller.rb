@@ -1,4 +1,5 @@
 class Admin::MatchResultsController < Admin::BaseController
+  load_and_authorize_resource
   before_action :load_match_result, except: [:index, :new, :create]
   skip_before_action :verify_authenticity_token, only: [:destroy, :create]
 
