@@ -289,3 +289,11 @@ en:
       message: "Message"
       create_at: "Created at"
       updated_at: "Updated_at"
+  activerecord:
+    error:
+      models:
+        user:
+          name:
+            blank: "name cannot be empty/falsy, producing a custom validation error on failure"
+          email:
+            blank: "can't be blank"
